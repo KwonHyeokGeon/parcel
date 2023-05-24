@@ -182,7 +182,7 @@ export default {
     },
   },
   created() {
-    axios.get("https://info.sweettracker.co.kr/api/v1/companylist?t_key=pioMuUx1xlNFnu2EvfNukg").then((res) => {
+    axios.get("https://info.sweettracker.co.kr/api/v1/companylist?t_key=NL20DXRjMqSgPxb4Dz3idA").then((res) => {
       this.Carriers = res.data.Company;
       console.log(res)
     });
