@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.animate__bounce{
+  animation-iteration-count: calc(3);
+  animation-delay: 1s;
+}
+.animate__heartBeat{
+  animation-iteration-count: calc(2);
+  animation-delay: 1s;
+}
+.animate__lightSpeedInLeft{
+  animation-duration: 1500ms;
+}
+.animate__flash{
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+/* @keyframes move-to{
+  0%{
+    transform: rotate(0deg);
+    left: -35px;
+    bottom: 100%
+  }
+  25%{
+    transform: rotate(0deg);
+    left: 100%;
+    bottom: 100%
+  }
+  26%{
+    transform: rotate(90deg);
+  }
+  50%{
+    transform: rotate(90deg);
+    left: 100%;
+    bottom: -17%;
+  }
+  51%{
+    transform: rotate(180deg);
+  }
+  75%{
+    transform: rotate(180deg);
+    bottom:-17%;
+    left: -35px
+  }
+  76%{
+    transform: rotate(270deg);
+  }
+  100%{
+    transform: rotate(270deg);
+    left: -35px;
+    bottom: 100%;
+  }
+}
+
+.move-to{
+  animation-name: move-to;
+  animation-duration: 15s;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+ */
