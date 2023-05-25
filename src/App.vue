@@ -123,7 +123,7 @@ export default {
     return {
       selectIndex: 0,
       isBtn: 1,
-      t_key: "pioMuUx1xlNFnu2EvfNukg",
+      t_key: "NL20DXRjMqSgPxb4Dz3idA",
       t_code: "04",
       t_invoice: "",
       Trackings: [],
@@ -173,7 +173,6 @@ export default {
           if (res.data.code === "104") {
             this.errorMsg = res.data.msg;
           } else {
-            console.log(res);
             this.Trackings = res.data;
             this.errorMsg = "";
             this.isShow = true;
@@ -184,7 +183,6 @@ export default {
   created() {
     axios.get("https://info.sweettracker.co.kr/api/v1/companylist?t_key=NL20DXRjMqSgPxb4Dz3idA").then((res) => {
       this.Carriers = res.data.Company;
-      console.log(res)
     });
   },
   computed: {
