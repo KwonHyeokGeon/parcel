@@ -20,6 +20,7 @@
       <p class="animate__animated animate__bounce text-sm text-center">Click eye!</p>
     </div>
   </div>
+
   <h1 class="font-extrabold text-3xl md:text-4xl text-center mt-2 font-jalnan animate__animated animate__lightSpeedInLeft"
     :class="themeColor[theme].font">
     국내&해외 택배조회 시스템
@@ -33,14 +34,13 @@
     <div class="basis-full py-2 px-3 flex justify-center items-center text-lg">
       <span class="basis-[33%] text-sm sm:text-lg text-center mr-5">국내/국외 선택</span>
       <button @click="isBtn = 1; t_code = '04';"
-        :class="[isBtn == 1 && themeColor[theme] && themeColor[theme].active,isBtn === 1 ? ' text-white' : 'text-black',]"
+        :class="[isBtn == 1 && themeColor[theme] && themeColor[theme].active, isBtn === 1 ? ' text-white' : 'text-black',]"
         class="text-lg border border-[#424874] p-1 px-3 sm:px-5 rounded hover:text-white mr-4]">
         국내
       </button>
-      <button @click="isBtn = 2;t_code = '12';"
-          :class="[isBtn == 2 && themeColor[theme] && themeColor[theme].active,
-          isBtn === 2 ? ' text-white' : 'text-black',]"
-          class="text-lg border border-[#424874] p-1 px-3 sm:px-5 rounded hover:text-white]">
+      <button @click="isBtn = 2; t_code = '12';" :class="[isBtn == 2 && themeColor[theme] && themeColor[theme].active,
+      isBtn === 2 ? ' text-white' : 'text-black',]"
+        class="text-lg border border-[#424874] p-1 px-3 sm:px-5 rounded hover:text-white]">
         국외
       </button>
     </div>
@@ -48,36 +48,26 @@
       <option v-for="e in Company" :key="e" :value="e.Code">{{ e.Name }}</option>
     </select>
     <div class="py-4 text-center basis-[100%]">
-      <input
-        type="text"
-        placeholder="운송장번호입력"
-        class="border-2 w-full px-5 py-2"
-        v-model="t_invoice"
-        @input="bindNumber"
-        id="t_invoice"/>
+      <input type="text" placeholder="운송장번호입력" class="border-2 w-full px-5 py-2" v-model="t_invoice" @input="bindNumber"
+        id="t_invoice" />
     </div>
   </div>
   <div class="text-center relative">
-    <button
-      :class="themeColor[theme] && themeColor[theme].back"
-      class="text-white py-3 bg-yellow-400 p-6"
+    <button :class="themeColor[theme] && themeColor[theme].back" class="text-white py-3 bg-yellow-400 p-6"
       @click="PostList()">조회하기</button>
-    <lottie-player
-      :src="require('@/assets/arrowDown.json')"
-      background="transparent"
-      speed="0.5"
-      autoplay
-      loop
-      style="max-width: 30px; max-height: 30px"
-      class="absolute left-[50%] -translate-x-[50%]">
+    <lottie-player :src="require('@/assets/arrowDown.json')" background="transparent" speed="0.5" autoplay loop
+      style="max-width: 30px; max-height: 30px" class="absolute left-[50%] -translate-x-[50%]">
     </lottie-player>
+  </div> 
+  <div class="marquee overflow-hidden border border-[#ccc] mt-20">
+    <p class="items-center w-full text-3xl h-20 marqueeTxt mr-10 flex gap-x-20 whitespace-nowrap"><span>신속•정확 배달</span><span>신속•정확
+      배달</span><span>신속•정확 배달</span><span>신속•정확 배달</span><span>신속•정확 배달</span><span>신속•정확 배달</span>
+    </p>
   </div>
 
   <p class="text-center text-2xl text-red-500 font-bold mt-10 animate__flash animate__animated">{{ errorMsg }}</p>
-  <div class="border-2 rounded-lg sm:w-[80%] sm:mx-auto mt-10"
-    :class="themeColor[theme].border"
-    v-if="isShow && errorMsg === ''"
-    id="deliverInfo">
+  <div class="border-2 rounded-lg sm:w-[80%] sm:mx-auto mt-10" :class="themeColor[theme].border"
+    v-if="isShow && errorMsg === ''" id="deliverInfo">
     <div class="w-full relative bg-parcel bg-no-repeat bg-cover bg-center sm:bg-repeat sm:bg-contain">
       <div class="w-24 text-center absolute left-[50%] translate-x-[-50%] rounded-b-full text-white bg-[#3282B8]">
         배송정보
@@ -93,13 +83,14 @@
       <div class="my-5 flex justify-around">
         <div class="relative" v-for="level in 5" :key="level">
           <img :src="Trackings.level - 1 === level
-                ? require(`@/assets/images/ic_sky_delivery_step${level}_on.png`)
-                : require(`@/assets/images/ic_sky_delivery_step${level}_off.png`)"/>
+            ? require(`@/assets/images/ic_sky_delivery_step${level}_on.png`)
+            : require(`@/assets/images/ic_sky_delivery_step${level}_off.png`)" />
           <p>{{ PostListName[level - 1] }}</p>
         </div>
       </div>
       <div class="py-5">
-        <div class="px-5 py-5 first:text-red-500 first:font-extrabold md:flex md:justify-between" v-for="(e, index) in Trackings.trackingDetails.slice().reverse()" :key="index">
+        <div class="px-5 py-5 first:text-red-500 first:font-extrabold md:flex md:justify-between"
+          v-for="(e, index) in Trackings.trackingDetails.slice().reverse()" :key="index">
           <p class="text-2xl pb-1 md:basis-[24%]">{{ e.kind }}</p>
           <p class="text-2xl pb-1 md:basis-[24%]">{{ e.where }}</p>
           <p v-if="e.telno" class="text-2xl pb-1 md:basis-[24%]">tel:{{ e.telno }}</p>
@@ -202,12 +193,27 @@ export default {
     },
   },
   components: {},
-  mounted() {},
+  mounted() { },
 };
 </script>
 
 <style>
 body {
   font-family: "NanumSquareNeo-Variable";
+}
+
+.marqueeTxt {
+  animation: marquee1 10s linear infinite;
+}
+
+@keyframes marquee1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+
+  /* 이동거리 */
 }
 </style>
